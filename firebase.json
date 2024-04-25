@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"cal-ads","configurations":{"android":"1:850051760376:android:aad7bc73611619e5cabb0d","web":"1:850051760376:web:0d8e10cdcd3227c8cabb0d"}}},"android":{"default":{"projectId":"cal-ads","appId":"1:850051760376:android:aad7bc73611619e5cabb0d","fileOutput":"android/app/google-services.json"}}}}}
