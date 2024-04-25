@@ -6,7 +6,7 @@ class Options {
       "imageurl": "assets/image/mallbillboard.png",
       "title": "Billboard in mall"
     },
-    {"imageurl": "assets/image/drop-of-liquid.png", "title": "free ad adv"},
+    {"imageurl": "assets/image/drop-of-liquid.png", "title": "free water adv"},
     {"imageurl": "assets/image/truck.png", "title": "Vechile Adv"},
   ];
 }
