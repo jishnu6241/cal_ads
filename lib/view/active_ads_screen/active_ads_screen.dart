@@ -8,58 +8,68 @@ class ActiveAds extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colorconstant.primerycolor,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-          child: Column(
-            children: [
-              Material(
-                borderRadius: BorderRadius.circular(20),
-                color: Colorconstant.tertiarycolor,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Prints",
-                            style: GoogleFonts.lindenHill(
-                                fontSize: 20,
-                                color: Colorconstant.primerycolor),
+      color: Colorconstant.primerycolor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+        child: Column(
+          children: [
+            Material(
+              borderRadius: BorderRadius.circular(20),
+              color: Colorconstant.tertiarycolor,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Poster Billboard",
+                          style: GoogleFonts.lindenHill(
+                              fontSize: 20, color: Colorconstant.primerycolor),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Colorconstant.secondarycolor,
+                          child: Icon(
+                            Icons.image,
+                            color: Colorconstant.primerycolor,
                           ),
-                          Text(
-                            "Duration",
-                            style: GoogleFonts.lindenHill(
-                                fontSize: 20,
-                                color: Colorconstant.primerycolor),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "location",
-                        style: GoogleFonts.lindenHill(
-                            fontSize: 20, color: Colorconstant.primerycolor),
-                      ),
-                      Text(
-                        "Paid",
-                        style: GoogleFonts.lindenHill(
-                            fontSize: 20, color: Colorconstant.primerycolor),
-                      ),
-                      Text(
-                        "time-time",
-                        style: GoogleFonts.lindenHill(
-                            fontSize: 20, color: Colorconstant.primerycolor),
-                      ),
-                    ],
-                  ),
+                        ),
+                        const Spacer(),
+                        Text(
+                          "Duration",
+                          style: GoogleFonts.lindenHill(
+                              fontSize: 20, color: Colorconstant.primerycolor),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "location",
+                      style: GoogleFonts.lindenHill(
+                          fontSize: 20, color: Colorconstant.primerycolor),
+                    ),
+                    Text(
+                      "Paid",
+                      style: GoogleFonts.lindenHill(
+                          fontSize: 20, color: Colorconstant.primerycolor),
+                    ),
+                    Text(
+                      "Expiring Date",
+                      style: GoogleFonts.lindenHill(
+                          fontSize: 20, color: Colorconstant.primerycolor),
+                    ),
+                  ],
                 ),
-              )
-            ],
-          ),
-        ));
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

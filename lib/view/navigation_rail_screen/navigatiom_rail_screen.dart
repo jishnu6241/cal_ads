@@ -1,6 +1,5 @@
 import 'package:cal_ads/utils/color_constant.dart';
 import 'package:cal_ads/utils/custom_alert_dialog.dart';
-import 'package:cal_ads/view/active_ads_screen/active_ads_screen.dart';
 import 'package:cal_ads/view/contact_us_screen/contact_us_screen.dart';
 import 'package:cal_ads/view/home_screen/home_screen.dart';
 import 'package:cal_ads/view/login_screen/login_screen.dart';
@@ -19,7 +18,6 @@ class NavigationRailScreen extends StatefulWidget {
 class _NavigationRailScreenState extends State<NavigationRailScreen> {
   final List<Widget> screens = [
     const HomeScreen(),
-    const ActiveAds(),
     const RequestedAds(),
     const ContactUs(),
   ];
@@ -116,13 +114,13 @@ class _NavigationRailScreenState extends State<NavigationRailScreen> {
               ),
               NavigationRailDestination(
                 icon: Icon(
-                  Icons.task_alt,
+                  Icons.info,
                   color: _selecetdIndex == 1
                       ? Colorconstant.tertiarycolor
                       : Colorconstant.secondarycolor,
                 ),
                 label: Text(
-                  'Active Ads',
+                  'Request Info',
                   style: GoogleFonts.lindenHill(
                     fontWeight: _selecetdIndex == 1
                         ? FontWeight.bold
@@ -136,39 +134,19 @@ class _NavigationRailScreenState extends State<NavigationRailScreen> {
               ),
               NavigationRailDestination(
                 icon: Icon(
-                  Icons.info,
-                  color: _selecetdIndex == 2
-                      ? Colorconstant.tertiarycolor
-                      : Colorconstant.secondarycolor,
-                ),
-                label: Text(
-                  'Request Info',
-                  style: GoogleFonts.lindenHill(
-                    fontWeight: _selecetdIndex == 2
-                        ? FontWeight.bold
-                        : FontWeight.normal,
-                    fontSize: 20,
-                    color: _selecetdIndex == 2
-                        ? Colorconstant.primerycolor
-                        : Colorconstant.secondarycolor,
-                  ),
-                ),
-              ),
-              NavigationRailDestination(
-                icon: Icon(
                   Icons.help,
-                  color: _selecetdIndex == 3
+                  color: _selecetdIndex == 2
                       ? Colorconstant.tertiarycolor
                       : Colorconstant.secondarycolor,
                 ),
                 label: Text(
                   'Contact Us',
                   style: GoogleFonts.lindenHill(
-                    fontWeight: _selecetdIndex == 3
+                    fontWeight: _selecetdIndex == 2
                         ? FontWeight.bold
                         : FontWeight.normal,
                     fontSize: 20,
-                    color: _selecetdIndex == 3
+                    color: _selecetdIndex == 2
                         ? Colorconstant.primerycolor
                         : Colorconstant.secondarycolor,
                   ),

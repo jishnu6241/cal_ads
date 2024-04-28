@@ -1,4 +1,5 @@
 import 'package:cal_ads/utils/color_constant.dart';
+import 'package:cal_ads/utils/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -68,19 +69,10 @@ class ContactUs extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colorconstant.secondarycolor,
-                      ),
-                      child: Text(
-                        "send",
-                        style: GoogleFonts.lindenHill(
-                            fontSize: 24, color: Colorconstant.primerycolor),
-                      ),
-                    ),
+                    CustomButton(
+                      label: 'Send',
+                      onTap: () {},
+                    )
                   ],
                 )
               ],

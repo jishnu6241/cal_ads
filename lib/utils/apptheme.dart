@@ -1,6 +1,7 @@
-import 'package:cal_ads/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'color_constant.dart';
 
 ThemeData apptheme = ThemeData(
   inputDecorationTheme: InputDecorationTheme(

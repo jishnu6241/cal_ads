@@ -15,6 +15,7 @@ class CustomDropDownMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownMenu(
+      requestFocusOnTap: false,
       enableSearch: false,
       width: 360,
       hintText: label,
