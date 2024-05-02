@@ -18,6 +18,12 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  bool obscureText = true;
+  void toggleObscure() {
+    setState(() {
+      obscureText = !obscureText;
+    });
+  }
 
   @override
   void initState() {
@@ -94,9 +100,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                     controller: _emailController,
-                    style: GoogleFonts.lindenHill(
+                    style: GoogleFonts.poppins(
                         color: Colorconstant.primerycolor,
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: FontWeight.normal),
                     decoration: const InputDecoration(
                       border: InputBorder.none,
@@ -115,15 +121,22 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                     controller: _passwordController,
-                    obscureText: true,
+                    obscureText: obscureText,
                     obscuringCharacter: '*',
-                    style: GoogleFonts.lindenHill(
+                    style: GoogleFonts.poppins(
                         color: Colorconstant.primerycolor,
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: FontWeight.normal),
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Password',
+                      suffixIcon: InkWell(
+                          onTap: () {
+                            toggleObscure();
+                          },
+                          child: Icon(obscureText == true
+                              ? Icons.visibility_off
+                              : Icons.visibility)),
                     ),
                   ),
                   const SizedBox(

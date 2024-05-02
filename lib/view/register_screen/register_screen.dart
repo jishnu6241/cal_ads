@@ -212,7 +212,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     ),
                                     CustomButton(
                                       label: 'Register',
-                                      onTap: () {},
+                                      onTap: () {
+                                        createUser();
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const LoginScreen(),
+                                            ));
+                                      },
                                     ),
                                   ],
                                 ),

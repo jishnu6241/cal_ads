@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:cal_ads/utils/color_constant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -180,7 +181,7 @@ class BillboardCard extends StatelessWidget {
 
 class CustomImageViewer extends StatelessWidget {
   final double height, width;
-  final File src;
+  final Uint8List src;
   const CustomImageViewer({
     super.key,
     this.height = 400,
@@ -191,7 +192,7 @@ class CustomImageViewer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      child: Image.file(
+      child: Image.memory(
         src,
         height: height,
         width: width,
