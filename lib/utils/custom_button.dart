@@ -21,11 +21,12 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
           child: Text(
             label,
-            style: GoogleFonts.lindenHill(
-                fontSize: 24, color: Colorconstant.primerycolor),
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(
+                fontSize: 20, color: Colorconstant.primerycolor),
           ),
         ),
       ),
