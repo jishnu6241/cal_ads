@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:cal_ads/utils/color_constant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -145,6 +144,7 @@ class BillboardCard extends StatelessWidget {
               height: 10,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   data['location'],
@@ -152,6 +152,9 @@ class BillboardCard extends StatelessWidget {
                     fontSize: 16,
                     color: Colorconstant.primerycolor,
                   ),
+                ),
+                const SizedBox(
+                  width: 10,
                 ),
                 Text(
                   data['price'].toString(),
@@ -167,6 +170,342 @@ class BillboardCard extends StatelessWidget {
             ),
             Text(
               data['suggestion'],
+              style: GoogleFonts.poppins(
+                fontSize: 16,
+                color: Colorconstant.primerycolor,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TaxitopMediacard extends StatelessWidget {
+  final Map<String, dynamic> data;
+
+  const TaxitopMediacard({
+    super.key,
+    required this.data,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: BorderRadius.circular(20),
+      color: Colorconstant.tertiarycolor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'taxi number',
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+                Material(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 10,
+                    ),
+                    child: Text(
+                      "data['status']",
+                      style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        color: Colorconstant.secondarycolor,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Duration',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => CustomImageViewer(
+                        src: data['image'],
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "View Image",
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Location',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+                Text(
+                  'Price',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              data['suggestion'],
+              style: GoogleFonts.poppins(
+                fontSize: 16,
+                color: Colorconstant.primerycolor,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class BillboardInMallCard extends StatelessWidget {
+  final Map<String, dynamic> data;
+
+  const BillboardInMallCard({
+    super.key,
+    required this.data,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: BorderRadius.circular(20),
+      color: Colorconstant.tertiarycolor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'mall name location',
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+                Material(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 10,
+                    ),
+                    child: Text(
+                      data['status'],
+                      style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        color: Colorconstant.secondarycolor,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'duration',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => CustomImageViewer(
+                        src: data['image'],
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "View Image",
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              'price',
+              style: GoogleFonts.poppins(
+                fontSize: 16,
+                color: Colorconstant.primerycolor,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              data['suggestion'],
+              style: GoogleFonts.poppins(
+                fontSize: 16,
+                color: Colorconstant.primerycolor,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FreeWaterAdvCard extends StatelessWidget {
+  final Map<String, dynamic> data;
+
+  const FreeWaterAdvCard({
+    super.key,
+    required this.data,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: BorderRadius.circular(20),
+      color: Colorconstant.tertiarycolor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Free water add',
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+                Material(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 10,
+                    ),
+                    child: Text(
+                      "status",
+                      style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        color: Colorconstant.secondarycolor,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Duration',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => CustomImageViewer(
+                        src: data['image'],
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "View Image",
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Location',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+                Text(
+                  'Price',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colorconstant.primerycolor,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Suggestion',
               style: GoogleFonts.poppins(
                 fontSize: 16,
                 color: Colorconstant.primerycolor,

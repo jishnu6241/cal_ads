@@ -127,17 +127,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: SingleChildScrollView(
                     child: Form(
                       key: _formKey,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Create an Account",
-                            style: GoogleFonts.lilyScriptOne(
-                                fontSize: 35,
-                                color: Colorconstant.secondarycolor),
-                          ),
-                          Center(
-                            child: Padding(
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Text(
+                              "Create an Account",
+                              style: GoogleFonts.lilyScriptOne(
+                                  fontSize: 35,
+                                  color: Colorconstant.secondarycolor),
+                            ),
+                            Padding(
                               padding: const EdgeInsets.symmetric(
                                 vertical: 40,
                               ),
@@ -145,15 +144,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 constraints:
                                     const BoxConstraints.tightFor(width: 400),
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    CircleAvatar(
-                                      radius: 70,
-                                      backgroundColor:
-                                          Colorconstant.secondarycolor,
-                                    ),
-                                    const SizedBox(
-                                      height: 40,
-                                    ),
                                     TextFormField(
                                       controller: _emailController,
                                       decoration: const InputDecoration(
@@ -214,6 +206,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       label: 'Register',
                                       onTap: () {
                                         createUser();
+
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
@@ -225,9 +218,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   ],
                                 ),
                               ),
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),

@@ -1,11 +1,22 @@
 import 'package:cal_ads/utils/color_constant.dart';
 import 'package:cal_ads/utils/custom_button.dart';
+import 'package:cal_ads/utils/custom_dropdown.dart';
 import 'package:cal_ads/utils/custom_image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AdvWithFreeWater extends StatelessWidget {
+class AdvWithFreeWater extends StatefulWidget {
   const AdvWithFreeWater({super.key});
+
+  @override
+  State<AdvWithFreeWater> createState() => _AdvWithFreeWaterState();
+}
+
+class _AdvWithFreeWaterState extends State<AdvWithFreeWater> {
+  TextEditingController dateController = TextEditingController();
+  TextEditingController bottleCount = TextEditingController();
+  TextEditingController suggestionController = TextEditingController();
+  List<String> selectLocation = ['Kannur', 'Eranakulam', 'Kollam', 'Kozhikode'];
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +49,26 @@ class AdvWithFreeWater extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
+                CustomDropDownMenu(
+                    dataList: selectLocation, label: 'select Location'),
+                const SizedBox(
+                  height: 20,
+                ),
                 TextFormField(
+                  keyboardType: const TextInputType.numberWithOptions(),
+                  controller: bottleCount,
                   decoration: const InputDecoration(
-                    hintText: 'Add location here',
+                    hintText: 'Type count',
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  ' Note : 50 Rs per bottle',
+                  style: GoogleFonts.poppins(
+                    fontSize: 13,
+                    color: Colorconstant.secondarycolor,
                   ),
                 ),
                 const SizedBox(
@@ -64,40 +92,25 @@ class AdvWithFreeWater extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    width: 150,
-                    decoration: BoxDecoration(
-                        color: Colorconstant.secondarycolor,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'date & time',
-                            style: GoogleFonts.poppins(
-                              fontSize: 15,
-                              color: Colorconstant.primerycolor,
-                            ),
-                          ),
-                          Icon(
-                            Icons.calendar_month,
-                            color: Colorconstant.primerycolor,
-                            size: 15,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+                TextFormField(
+                  controller: dateController,
+                  focusNode: FocusNode(canRequestFocus: false),
+                  decoration: InputDecoration(
+                      hintText: 'Pick date',
+                      suffixIcon: Icon(
+                        Icons.calendar_month_outlined,
+                        color: Colorconstant.primerycolor,
+                      )),
+                  readOnly: true,
+                  onTap: () {
+                    _selectDate();
+                  },
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 TextFormField(
+                  controller: suggestionController,
                   minLines: 4,
                   maxLines: 5,
                   decoration: const InputDecoration(
@@ -133,5 +146,18 @@ class AdvWithFreeWater extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _selectDate() async {
+    DateTime? picked = await showDatePicker(
+        context: context,
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2100),
+        initialDate: DateTime.now());
+    if (picked != null) {
+      setState(() {
+        dateController.text = picked.toString().split(" ")[0];
+      });
+    }
   }
 }

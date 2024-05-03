@@ -83,9 +83,6 @@ class _NavigationRailScreenState extends State<NavigationRailScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const CircleAvatar(
-                    radius: 40,
-                  )
                 ],
               ),
             ),

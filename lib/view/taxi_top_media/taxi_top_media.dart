@@ -14,7 +14,7 @@ class TaxiTopMedia extends StatefulWidget {
 }
 
 class _TaxiTopMediaState extends State<TaxiTopMedia> {
-  String? selectedTaxi;
+  String? selectedTaxi, selectedLocation;
   List<String> taxiOptions = [
     'KL 13 AU 6241',
     'KL 13 S 4749',
@@ -26,6 +26,7 @@ class _TaxiTopMediaState extends State<TaxiTopMedia> {
     '2 month',
     '6 month',
   ];
+  List<String> location = ['Kannur', 'Eranakulam', 'Kollam', 'Kozhikode'];
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -89,6 +90,16 @@ class _TaxiTopMediaState extends State<TaxiTopMedia> {
                 CustomDropDownMenu(
                   dataList: dateDuration,
                   label: 'Select duration',
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                CustomDropDownMenu(
+                  onSelected: (select) {
+                    selectedLocation = select;
+                  },
+                  dataList: location,
+                  label: 'Select location',
                 ),
                 const SizedBox(
                   height: 20,

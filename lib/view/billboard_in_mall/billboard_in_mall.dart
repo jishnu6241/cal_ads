@@ -13,7 +13,8 @@ class BillBoardInMall extends StatefulWidget {
 }
 
 class _BillBoardInMallState extends State<BillBoardInMall> {
-  String? selectedMallOptions;
+  String? selectedMallOptions, selectedLocation;
+
   List<String> mallOptions = [
     'Secura mall , Kannur',
     'LULU mall , Kannur',
